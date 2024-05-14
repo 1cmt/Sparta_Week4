@@ -33,19 +33,16 @@ public class TopDownMovement : MonoBehaviour
     private void ApplyMovement(Vector2 direction)
     {
         direction = direction * speed;
-        Debug.Log(direction);
         rigidBody.velocity = direction;
     }
 
     private void Move(Vector2 direction)
     {
-        Debug.Log("Move"); //Move함수 자체가 호출이 안됩니다.
         movementDirection = direction;
     }
 
     private void Flip(Vector2 direction)
     {  
-        Debug.Log("Flip"); //Flip함수 자체가 호출이 안됩니다.
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; 
 
         characterRenderer.flipX = Mathf.Abs(rotZ) > 90f;
