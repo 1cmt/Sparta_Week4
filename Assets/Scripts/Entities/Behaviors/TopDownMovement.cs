@@ -6,7 +6,7 @@ public class TopDownMovement : MonoBehaviour
     private TopDownController controller;
     private Rigidbody2D rigidBody;
     
-    [SerializeField] private SpriteRenderer characterRenderer;
+    private SpriteRenderer characterRenderer;
     
     [SerializeField] 
     [Range(1f, 100f)] private float speed;
@@ -17,6 +17,7 @@ public class TopDownMovement : MonoBehaviour
     {
         controller = GetComponent<TopDownController>();
         rigidBody = GetComponent<Rigidbody2D>();    
+        characterRenderer = GetComponentInChildren<SpriteRenderer>();
     }
     
     private void Start() 
